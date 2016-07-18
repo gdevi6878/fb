@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "FBSDKCoreKit/FBSDKCoreKit.h"
+#import "MasterViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -30,11 +31,16 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    MasterViewController *new=[[MasterViewController alloc]init];
+    
+    UINavigationController *root =[[UINavigationController alloc]initWithRootViewController : new];
+    
     // Override point for customization after application launch.
-    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-    navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
-    splitViewController.delegate = self;
+   // UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
+    //UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
+    //navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
+    //splitViewController.delegate = self;
     return YES;
 }
 

@@ -8,6 +8,8 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @interface MasterViewController ()
 
@@ -18,6 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+     self.view.backgroundColor=[UIColor whiteColor];
+    FBSDKLoginButton *loginBttn =[[FBSDKLoginButton alloc]init];
+    UIButton *bttn1=[[UIButton alloc]initWithFrame:CGRectMake(150, 250, 80, 30)];
+                     [self.view addSubview:bttn1];
+    bttn1.backgroundColor=[UIColor yellowColor];
+    [bttn1 setTitle:@"submit" forState:UIControlStateNormal];
+    loginBttn.center=self.view.center;
+    [self.view addSubview:loginBttn];
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
